@@ -21,10 +21,11 @@ public class RetroSun extends PApplet {
 
     int bgColor = color(31, 0, 48);
 
-    @Override
-    public void settings() {
+    
+    @Override public void settings() {
         // 1. Set the size of your sketch to at least 800 width, 600 height
-        
+        int dogH = 900;
+        int dogW = 700;
     }
 
     @Override
