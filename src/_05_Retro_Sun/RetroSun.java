@@ -24,14 +24,13 @@ public class RetroSun extends PApplet {
     
     @Override public void settings() {
         // 1. Set the size of your sketch to at least 800 width, 600 height
-        int dogH = 900;
-        int dogW = 700;
+        size(800,600);
     }
 
     @Override
     public void setup() {
         // 2. Set bgColor as the background color
-        
+        background(bgColor);
     }
 
     @Override
@@ -43,7 +42,7 @@ public class RetroSun extends PApplet {
         // Draw an ellipse for the sun in the center of the window
         // Use fill(sunColors[0]) to make it yellow
         // Use noStroke() to remove the black outline
-
+    	ellipse(1,2,3,4);
         // Do you see a yellow sun like in the 1st image?
         // If not, fix your code before proceeding.
 

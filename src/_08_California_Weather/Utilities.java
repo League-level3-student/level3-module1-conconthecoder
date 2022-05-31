@@ -24,6 +24,8 @@ public class Utilities {
         return formattedCityName.trim();
     }
     
+    
+    
     /*
      * Use this method to get a HashMap of a California city and the
      * weather data

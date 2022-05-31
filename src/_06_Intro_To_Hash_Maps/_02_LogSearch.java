@@ -1,9 +1,12 @@
 package _06_Intro_To_Hash_Maps;
 
+import javax.swing.*;
 
+import java.util.HashMap;
 public class _02_LogSearch {
     /*
      * Crate a HashMap of Integers for the keys and Strings for the values.
+     
      * Create a GUI with three buttons.
      * Button 1: Add Entry
      *      When this button is clicked, use an input dialog to ask the user
@@ -33,5 +36,15 @@ public class _02_LogSearch {
      *      If this ID exists in the HashMap, remove it. Otherwise, notify the
      *      user that the ID is not in the list.
      */
-
+	public static void main(String[] args) {
+		HashMap<Integer, String> dog = new HashMap<Integer, String>();
+		JFrame f=new JFrame("Give us the info lol");  
+	    JButton b=new JButton("Add Entry");  
+	    b.setBounds(50,100,95,30);  
+	    f.add(b);  
+	    f.setSize(400,400);  
+	    f.setLayout(null);  
+	    f.setVisible(true);
+	}
+	
 }

@@ -1,7 +1,8 @@
 package _08_California_Weather;
 
 import java.util.HashMap;
-
+import java.util.ArrayList;
+import java.util.Scanner;
 /*
  * OBJECTIVE:
  * 1. Create a program that allows the user to search for the weather
@@ -31,15 +32,28 @@ public class CaliforniaWeather {
     
     void start() {
         HashMap<String, WeatherData> weatherData = Utilities.getWeatherData();
-        
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Enter city name");
+        String userName = myObj.nextLine();
         // All city keys have the first letter capitalized of each word
-        String cityName = Utilities.capitalizeWords( "National City" );
+        String cityName = Utilities.capitalizeWords(userName);
         WeatherData datum = weatherData.get(cityName);
-        
         if( datum == null ) {
             System.out.println("Unable to find weather data for: " + cityName);
         } else {
             System.out.println(cityName + " is " + datum.weatherSummary + " with a temperature of " + datum.temperatureF + " F");
+        }
+        System.out.println("Enter 1 to find out cities with similar weathers conditions, and 2 to find cities in the desired temperature range");
+        int dog = Integer.valueOf(myObj.nextLine());
+        if (dog == 1) {
+        	 System.out.println(cityName + " is " + datum.weatherSummary + ", and cities with similar conditions include " + datum.similarWeather(cityName));
+        }
+        else if ( dog == 2) {
+        	System.out.println(" Enter low temp:");
+        	double g = Double.valueOf(myObj.nextLine());
+        	System.out.println(" Enter high temp:");
+        	double f = Double.valueOf(myObj.nextLine());
+        	System.out.println("Valid cities include: " + datum.goodTemp(f,g));
         }
     }
 }

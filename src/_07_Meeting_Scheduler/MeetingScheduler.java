@@ -1,5 +1,8 @@
 package _07_Meeting_Scheduler;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MeetingScheduler {
     /*
      * Your task is to code a method to find a meeting time for two people
@@ -22,7 +25,18 @@ public class MeetingScheduler {
      * Assume both schedules are in the same time zones
      */
     public static Schedule getMutualAvailability(Schedule person1, Schedule person2) {
-        
-        return null;
+    	HashMap<String, ArrayList<Integer>> dog1 = new HashMap<String, ArrayList<Integer>>();
+    	HashMap<String, ArrayList<Integer>> dog2 = new HashMap<String, ArrayList<Integer>>();
+    	Schedule dog = new Schedule();
+    	dog1 = person1.getSchedule();
+    	dog2 = person2.getSchedule();
+    	for (String i: dog1.keySet()) {
+    		if (dog1.get(i).size() ==0 || dog2.get(i).size() == 0) continue;
+    		for (int j: dog1.get(i)) {
+    			if (dog2.get(i).contains(j)) dog.addAvailability(i,j);
+    		}
+    	}
+    	
+        return dog;
     }
 }
